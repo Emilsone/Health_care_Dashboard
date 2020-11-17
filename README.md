@@ -1,4 +1,4 @@
-# client
+# Health Care Dashboard
 
 ## Project setup
 ```
