@@ -1,26 +1,19 @@
 <template>
   <div id="app">
-    <Dashboard />
+    <router-view />
   </div>
 </template>
 
 <script>
-
-import Dashboard from "./components/dashboard.vue";
-
 export default {
-  name: "App",
-  components: {
-    Dashboard,
-  },
+  name: "app",
 };
 </script>
 
-
 <style>
- @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
 * {
-   font-family: karla;
+  font-family: karla;
 }
 #app {
   -webkit-font-smoothing: antialiased;

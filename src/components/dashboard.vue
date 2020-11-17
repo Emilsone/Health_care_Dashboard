@@ -1,43 +1,40 @@
 <template>
-  <main>
-    <header>
-      <!-- <h1>USER DASHBOARD</h1> -->
-      <TopNav />
-    </header>
-    <div>
-      <div class="sidebar">
-        <SideBar />
-      </div>
-      <div class="main-page relative">
-        <router-view></router-view>
-        
+  <div class="leading-normal tracking-normal" id="main-body">
+    <div class="flex flex-wrap">
+
+      <Sidebar />
+
+      <div class="w-full bg-gray-100 pl-0 lg:pl-64 min-h-screen" :class="sideBarOpen ? 'overlay' : ''" id="main-content">
+
+        <Navbar />
+
+        <div class="p-6 bg-gray-100 mb-20">
+          <router-view />
+        </div>
+
+        <Footer />
+
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
-import SideBar from "./side-bar/side-bar.vue";
-import TopNav from "./top-nav/top-nav.vue";
+// import { mapState } from 'vuex'
+
+import Sidebar from './Sidebar'
+import Navbar from './Navbar'
+import Footer from './Footer'
+
 export default {
-  name: "Dashboard",
-  components: { SideBar,TopNav },
-};
+  name: 'Dashboard',
+//   computed: {
+//     ...mapState(['sideBarOpen'])
+//   },
+  components: {
+    Sidebar,
+    Navbar,
+    Footer
+  }
+}
 </script>
-
-<style scoped>
- /* main > header {
-  width: 100%;
-  height: 7%;
-} */
-
-/* main {
-  height: 100vh;
-}  */
-
-/* main > div {
-  height: 93%;
-  display: flex;
-} */
-
-</style>
